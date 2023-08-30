@@ -1,0 +1,20 @@
+[package]
+name = "fetch_dependencies"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+# This dependency is just for building and is needed in `build.rs`
+uniffi_build = {version = "0.24.3", features = [ "build" ]}
+
+[dependencies]
+uniffi = { version = "0.24.3" }
+whatlang = "0.16.0"
+stop-words = "0.6.2"
+color-eyre = "0.6.1"
+serde = { version = "1.0.137", features = ["derive"]}
+serde_json = { version = "1.0.81"}
+color-backtrace = { version = "0.5" }
+itertools = "0.10.3"
