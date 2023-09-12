@@ -7,7 +7,7 @@ edition = "2021"
 
 [build-dependencies]
 # This dependency is just for building and is needed in `build.rs`
-uniffi_build = {version = "0.24.3", features = [ "build" ]}
+uniffi_build = {version = "0.24.3"}
 
 [dependencies]
 uniffi = { version = "0.24.3" }
