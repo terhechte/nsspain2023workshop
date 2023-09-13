@@ -116,6 +116,11 @@
 
 ***
 
+# Hard to learn a language in 2 hours
+## Will skip things
+
+***
+
 - Much like Swift
 - Imperative & Functional
 - Pattern Matching
@@ -1456,7 +1461,7 @@ my_func(u.clone());
 
 --- :: master: regular2
 
-## Project 2: PW: `berlin`
+## Project 2
 
 - Read `Readme.md` to learn more
 - Total: 20min
@@ -1483,11 +1488,24 @@ for word in words:
 
 --- :: master: title1
 
-- `cbindgen` for C / C++
-- Mozilla `Uniffi` for Android, Swift, Python, Ruby
-- Define interface in `udl` file
+## Uniffi
+
+- Mozilla Foundation Project
+- Takes Rust code, generates libraries for different platforms
+- Kotlin, Swift, Go, C#
 
 --- :: master: regular1
+
+``` rs
+pub struct EmojiCount {
+  pub emoji: String,
+  pub count: u32
+}
+
+pub fn next_items(limit: u32) -> Vec<EmojiCount> { .. }
+```
+
+***
 
 ``` udl
 dictionary EmojiCount {
@@ -1501,36 +1519,20 @@ interface EmojiStream {
 
 ```
 
---- :: master: code
+--- 
 
-``` udl
-# Android
-uniffi-bindgen generate src/libemojistream.udl --language kotlin --out-dir generated/
 
-# iOS
-xcode_uniffi create
-```
 
---- :: master: code
+## Cargo Swift
+
+- Builds on Uniffi
+- Generates Swift Packages
+
+***
 
 # Demo
 
-- Show how the final project runs in Xcode
-- Show the uniffi Bindings
-
 --- :: master: title1
-
-# Final Project
-
-- Implement the `grouped_charts` and `grouped_emoji` functions
-- It will find all emoji in a set of Tweets and group them
-- Then it will calculate a tree map for these emoji groups
-- You can run the binary (`cargo run`)
-- Or you can run it from Xcode by opening the Xcode project
-
---- :: master: regular1
-
-
 
 
 
@@ -1634,7 +1636,10 @@ data
 # Why not Rust?
 
 
-***
+
+
+
+*** :: master: title1
 
 - Complex Language
 - You add a completely different build system to your probably already complex build system
@@ -1651,3 +1656,4 @@ data
 - I have longer, more detailed versions of this workshop available
 - If your company considers using Rust for cross platform code. Feel free to ping me
 - I've done this successfully with 3 apps on the App Store now (for different companies)
+
